@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ai.springAI.DTO.ImageRequestDTO;
 import com.ai.springAI.Service.ChatService;
 import com.ai.springAI.Service.ImageService;
+import com.ai.springAI.Service.RecipeService;
 
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
@@ -24,9 +25,12 @@ public class GenAIController {
 
     ImageService imageService;
 
-    public GenAIController(ChatService chatService, ImageService imageService) {
+    RecipeService recipeService;
+
+    public GenAIController(ChatService chatService, ImageService imageService, RecipeService recipeService) {
         this.chatService = chatService;
         this.imageService = imageService; 
+        this.recipeService = recipeService; 
     }
 
     @GetMapping("queryAI")
@@ -72,4 +76,12 @@ public class GenAIController {
             .collect(Collectors.toList());
         return imageUrls;
     }
+
+    @GetMapping("recipe-creator")
+    public String getImageResponseWithOptions2(@RequestParam String ingredients,
+                                                    @RequestParam(defaultValue = " ") String cusine,
+                                                    @RequestParam(defaultValue = "") String dietRestrictions) {
+        return recipeService.createRecipe(ingredients, cusine, dietRestrictions); 
+    }  
 }
+ 
