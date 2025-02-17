@@ -23,7 +23,7 @@
 hs_err_pid*
 replay_pid*
 *DS_Store
-/target/
+*/target/
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -57,3 +57,4 @@ build/
 
 ### VS Code ###
 .vscode/
+*notes.txt
