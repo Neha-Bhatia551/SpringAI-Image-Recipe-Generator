@@ -58,3 +58,7 @@ build/
 ### VS Code ###
 .vscode/
 *notes.txt
+
+*node_modules
+*package-lock.json
+/generator-frontend/.gitignore

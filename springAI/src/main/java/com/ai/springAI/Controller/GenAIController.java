@@ -52,20 +52,6 @@ public class GenAIController {
     }
 
     @GetMapping("generate-images-with-options")
-    public List<String> getImageResponseWithOptions(@RequestParam String prompt,
-        @RequestParam (defaultValue =  "hd") String quality,
-        @RequestParam ( defaultValue =  "1") int n,
-        @RequestParam ( defaultValue =  "1024") int width,
-        @RequestParam ( defaultValue =  "1024") int height )  throws IOException {
-        ImageResponse res= imageService.getMultipleImages(prompt, quality, n , width, height);  
-        //using streams to get all urls from  ImageResponse
-        List<String> imageUrls = res.getResults().stream()
-            .map(result -> result.getOutput().getUrl())
-            .collect(Collectors.toList());
-        return imageUrls;
-    }
-
-    @GetMapping("generate-images-with-options2")
     public List<String> getImageResponseWithOptions2(@Valid @ModelAttribute ImageRequestDTO request)  throws IOException {
         ImageResponse res= imageService.getMultipleImages(request.getPrompt(), request.getQuality(),request.getN(),
             Integer.valueOf(request.getWidth()), Integer.valueOf(request.getHeight()));  
