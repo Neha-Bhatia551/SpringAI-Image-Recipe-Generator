@@ -20,7 +20,7 @@ The app is built using Spring Boot & Spring AI on the backend and React with Tai
 - React Bootstrap – UI components
 
 ----
-## Feetures
+## Features
 Features
 - Generate Images – AI-powered image creation
 - Recipe Generator – Generate recipes based on user input
