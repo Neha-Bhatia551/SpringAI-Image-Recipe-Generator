@@ -20,7 +20,8 @@ public class RecipeService {
                 I want to create a recipe using the following ingredients : {ingredients}.
                 The cusine type i prefer is : {cusine}.
                 Please consider the following dietary restrictions : {dietRestrictions}.
-                Please provide me a detailed recipe including title, list of ingredients and cooking instructions.
+                Please provide me a recipe including title, list of ingredients and cooking instructions. Please don't 
+                make the recipe too long, make it short and simple.
                 If the ingredients or cusine or dietary restrictions dont make sense, return please provide valid inputs.
                 """;
         PromptTemplate template = new PromptTemplate(promptTemplate);

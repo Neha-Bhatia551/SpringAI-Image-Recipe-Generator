@@ -65,7 +65,7 @@ public class GenAIController {
 
     @GetMapping("recipe-creator")
     public String getImageResponseWithOptions2(@RequestParam String ingredients,
-                                                    @RequestParam(defaultValue = " ") String cusine,
+                                                    @RequestParam(defaultValue = "") String cusine,
                                                     @RequestParam(defaultValue = "") String dietRestrictions) {
         return recipeService.createRecipe(ingredients, cusine, dietRestrictions); 
     }  

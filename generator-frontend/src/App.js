@@ -19,10 +19,10 @@ function App() {
         className="mb-3 mt-6 w-50"
         justify
       >
-        <Tab eventKey="image" title="Image-Generator" className="bold">
+        <Tab eventKey="image" title="Image-Generator" className="bold w-full">
           <ImageGenerator />
         </Tab>
-        <Tab eventKey="recipe" title="Recipe Generator">
+        <Tab eventKey="recipe" title="Recipe Generator" className="w-full">
           <RecipeGenerator />
         </Tab>
       </Tabs>
