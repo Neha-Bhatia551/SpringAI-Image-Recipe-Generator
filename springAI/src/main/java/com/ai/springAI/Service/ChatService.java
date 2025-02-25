@@ -20,6 +20,7 @@ public class ChatService {
     }
 
     public String getResponseFromAIWithOptions(String prompt) {
+        prompt = prompt + ". Please provide a response within 250 characters.";
         ChatResponse res =  chatModel.call(new Prompt(
             prompt,
             OpenAiChatOptions.builder()

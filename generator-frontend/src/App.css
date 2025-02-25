@@ -6,3 +6,7 @@
 .nav-tabs .nav-item .nav-link {
   background-color: lightgray;
 }
+
+.card-group1 {
+  flex-flow: nowrap !important;
+}
